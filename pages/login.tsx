@@ -1,3 +1,10 @@
+/*
+Source: ChatGPT
+Prompt:
+
+Now, write me a really simple login Next.js route that has a field for the universal password and nothing more. It should attempt to authenticate when the user submits, and if successful, reroute to '/'
+
+*/
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -7,9 +14,9 @@ import { useAuth } from "@/contexts/AuthContext";
 export default function LoginPage() {
   const { login, isAuthenticated } = useAuth();
   const router = useRouter();
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
